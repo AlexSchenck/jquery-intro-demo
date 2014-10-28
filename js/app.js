@@ -15,14 +15,23 @@ function onReady() {
 	allSections.hide();
 } //onReady
 
+$('#exit-button').dblclick(function() {
+	// show the modal to the world!
+	$('#confirm-exit-modal').modal();
+});
+
+$('#confirm-exit-button').click(function() {
+	window.location.href = 'http://courses.washington.edu/info343/morris';
+});
+
 allImgs.hover(function() {
 	// console.log($(this));
 	$(this).addClass('awesomesauce');
-}); // allImgs onClick
+}); // allImgs hover
 
 allImgs.mouseout(function() {
 	$(this).removeClass('awesomesauce');
-});
+}); // allImgs mouseout
 
 allNavLinks.click(function() {
 	// the cooler jQuery this
@@ -35,7 +44,7 @@ allNavLinks.click(function() {
 	//allSections.fadeIn(6000);
 
 	allSections.hide();
-	$($(this).attr('href')).fadeToggle(1000);
+	$($(this).attr('href')).fadeToggle(1000).addClass('awesomesauce');
 }); // allNavLinks onClick
 
 $(onReady);
